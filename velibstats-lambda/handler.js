@@ -34,6 +34,10 @@ module.exports.velibstats = async event => {
   if (!token) {
     return {
       statusCode: 401,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
       body: JSON.stringify({
         message: 'Wrong credentials'
       })
@@ -41,6 +45,10 @@ module.exports.velibstats = async event => {
   }
   return {
     statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true
+    },
     body: JSON.stringify({
       items: await getCourseList(token),
     }),

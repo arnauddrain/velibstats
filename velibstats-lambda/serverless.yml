@@ -11,3 +11,4 @@ functions:
       - http:
           path: velibstats
           method: post
+          cors: true
