@@ -1,0 +1,13 @@
+service: velibstats
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  hello:
+    handler: handler.velibstats
+    events:
+      - http:
+          path: velibstats
+          method: post

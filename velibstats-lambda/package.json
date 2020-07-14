@@ -1,0 +1,15 @@
+{
+  "name": "velibstats-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function for velib stats",
+  "main": "handler.js",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arnaud Drain",
+  "license": "ISC"
+}
