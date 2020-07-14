@@ -36,6 +36,11 @@ export class AppComponent {
       });
   }
 
+  public logout(): void {
+    this.data = null;
+    localStorage.removeItem('velibData');
+  }
+
   private generateSerie(data: any[], filter): any[] {
     let sum = 0;
     return data.map(i => {

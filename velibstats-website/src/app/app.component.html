@@ -22,5 +22,6 @@
   <div *ngIf="!loading && data" class="chart-container">
     <ngx-charts-line-chart xAxis="Kilomètres" yAxis="Temps" [results]="data" [timeline]="true">
     </ngx-charts-line-chart>
+    <button class="btn btn-danger" (click)="logout()">Déconnexion</button>
   </div>
 </div>
