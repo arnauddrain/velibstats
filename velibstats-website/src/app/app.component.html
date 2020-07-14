@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Velib' Stats</h1>
+  <form #loginForm="ngForm" (ngSubmit)="login()" *ngIf="!loading && !data">
+    <p class="text-danger" *ngIf="error">Une erreur est survenue, veuillez ré-essayer.</p>
+    <div class="form-group">
+      <label for="email">Addresse email</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" [(ngModel)]="password"
+        name="password">
+      <small id="p asswordHelp" class="form-text text-muted">
+        Le mot de passe sera envoyé à Vélib' mais ne sera pas stocké
+      </small>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+  <div class="spinner-border" role="status" *ngIf="loading">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div *ngIf="!loading && data" class="chart-container">
+    <ngx-charts-line-chart xAxis="Kilomètres" yAxis="Temps" [results]="data" [timeline]="true">
+    </ngx-charts-line-chart>
+  </div>
+</div>
